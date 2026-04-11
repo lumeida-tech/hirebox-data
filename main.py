@@ -1,6 +1,5 @@
 from fastapi import FastAPI
 from fastapi.exceptions import HTTPException
-# from fastapi
 from src.glm_ai import Z_AI_Question_Generator
 from src.generate_question_handler import GenerateQuestionFromCVCommandHandler, GenerateQuestionFromCVHandler
 from src.api import GenerateQuestionsFromCVSchema
@@ -34,3 +33,4 @@ async def generate_questions_from_cv(data: GenerateQuestionsFromCVSchema):
     except Exception as e:
         return HTTPException(status_code=400, detail=str(e))
     return {"questions": questions_generated}
+

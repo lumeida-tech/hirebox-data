@@ -36,3 +36,6 @@ uv run fastapi dev main.py --port 8005
 
 - [Documentation uv](https://docs.astral.sh/uv/getting-started/installation/#standalone-installer)
 - [Documentation FastAPI](https://fastapi.tiangolo.com/)
+
+
+uvx mypy .
