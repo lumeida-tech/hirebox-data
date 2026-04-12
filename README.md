@@ -39,3 +39,8 @@ uv run fastapi dev main.py --port 8005
 
 
 uvx mypy .
+
+
+
+
+add API_KEY

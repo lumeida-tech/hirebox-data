@@ -1,8 +1,14 @@
+from dotenv import load_dotenv
+
+
 from fastapi import FastAPI
 from fastapi.exceptions import HTTPException
+import os
 from src.glm_ai import Z_AI_Question_Generator
 from src.generate_question_handler import GenerateQuestionFromCVCommandHandler, GenerateQuestionFromCVHandler
-from src.api import GenerateQuestionsFromCVSchema
+from src.api import GenerateQuestionsFromCVDto, GenerateQuestionsFromCVSchema
+
+load_dotenv()
 
 app = FastAPI()
 
@@ -15,22 +21,21 @@ async def root():
 async def ping_pong():
     return {"message": "pong", "status": "OK"}
 
-
-with open("generate_cv_questions_prompt.txt", "r") as prompt_file:
+GENERATE_CV_QUESTION_PROMPT_FILE=os.getenv("GENERATE_CV_QUESTION_PROMPT_FILE", "")
+with open(GENERATE_CV_QUESTION_PROMPT_FILE, "r") as prompt_file:
     GENERATE_CV_PROMPT = prompt_file.read()
 
 
-@app.post("/generate-questions-from-cv")
+@app.post("/generate-question-from-cv", response_model=GenerateQuestionsFromCVDto)
 async def generate_questions_from_cv(data: GenerateQuestionsFromCVSchema):
     question_generator = Z_AI_Question_Generator(GENERATE_CV_PROMPT)
     handler = GenerateQuestionFromCVHandler(question_generator)
     command = GenerateQuestionFromCVCommandHandler(
-        number_of_question=data.number,
-        cv_content=data.cv_content
+        cv_content=data.cv_content  
     )
     try:
-        questions_generated = await handler.execute(command)
+        question_generated = await handler.execute(command)
     except Exception as e:
         return HTTPException(status_code=400, detail=str(e))
-    return {"questions": questions_generated}
+    return GenerateQuestionsFromCVDto(question=question_generated)
 
