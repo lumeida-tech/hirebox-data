@@ -27,7 +27,7 @@ uv sync
 Lance FastAPI en mode développement sur le port 8005.
 
 ```bash
-uv run fastapi dev main.py --port 8005
+uv run fastapi dev main.py  # port 8000 pour le local et 8005 sur docker
 ```
 
 ---
@@ -37,5 +37,14 @@ uv run fastapi dev main.py --port 8005
 - [Documentation uv](https://docs.astral.sh/uv/getting-started/installation/#standalone-installer)
 - [Documentation FastAPI](https://fastapi.tiangolo.com/)
 
+## Linting local
+```bash
+uv run ruff check .
+uv run mypy
+```
 
-uvx mypy .
+## Docker
+```bash
+docker build -t hirebox-ai .  
+docker compose up -d
+```

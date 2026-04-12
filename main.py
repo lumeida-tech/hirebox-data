@@ -4,6 +4,7 @@ from src.glm_ai import Z_AI_Question_Generator
 from src.generate_question_handler import GenerateQuestionFromCVCommandHandler, GenerateQuestionFromCVHandler
 from src.api import GenerateQuestionsFromCVSchema
 
+
 app = FastAPI()
 
 
