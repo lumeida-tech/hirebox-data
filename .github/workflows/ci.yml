@@ -1,0 +1,121 @@
+name: CI/CD
+
+on:
+  pull_request:
+  push:
+    branches:
+      - "**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-cd-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # Etape 1:
+  # Verifie la qualite du code avec Ruff.
+  # On controle ici a la fois les erreurs de lint et le formatage.
+  lint:
+    name: Lint and format
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          enable-cache: true
+
+      - name: Install dependencies
+        run: uv sync --frozen
+
+      - name: Run Ruff lint
+        run: uv run ruff check .
+
+      - name: Check Ruff formatting
+        run: uv run ruff format --check .
+
+  # Etape 2:
+  # Verifie le typage statique avec mypy pour detecter des bugs silencieux.
+  type-check:
+    name: Static typing
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          enable-cache: true
+
+      - name: Install dependencies
+        run: uv sync --frozen
+
+      - name: Run mypy
+        run: uv run mypy
+
+  # Etape 3:
+  # Construit l'image Docker seulement si les controles qualite sont valides.
+  build-image:
+    name: Build image
+    runs-on: ubuntu-latest
+    needs:
+      - lint
+      - type-check
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Build Docker image
+        run: docker build --file dockerfile --tag hirebox-ai:${{ github.sha }} .
+
+  # Etape 4:
+  # Deploie l'application sur FastAPI Cloud uniquement apres un build reussi
+  # et seulement lors d'un push sur la branche main.
+  deploy-fastapicloud:
+    name: Deploy to FastAPI Cloud
+    runs-on: ubuntu-latest
+    needs:
+      - lint
+      - type-check
+      - build-image
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          enable-cache: true
+
+      - name: Validate FastAPI Cloud secrets
+        env:
+          FASTAPI_CLOUD_TOKEN: ${{ secrets.FASTAPI_CLOUD_TOKEN || secrets.FASTAPICLOUD_TOKEN }}
+          FASTAPI_CLOUD_APP_ID: ${{ secrets.FASTAPI_CLOUD_APP_ID || secrets.FASTAPICLOUD_APP_ID }}
+        run: |
+          test -n "$FASTAPI_CLOUD_TOKEN" || {
+            echo "Missing FASTAPI_CLOUD_TOKEN (recommended) or FASTAPICLOUD_TOKEN secret."
+            exit 1
+          }
+          test -n "$FASTAPI_CLOUD_APP_ID" || {
+            echo "Missing FASTAPI_CLOUD_APP_ID (recommended) or FASTAPICLOUD_APP_ID secret."
+            exit 1
+          }
+
+      - name: Deploy application
+        run: uv run fastapi deploy
+        env:
+          FASTAPI_CLOUD_TOKEN: ${{ secrets.FASTAPI_CLOUD_TOKEN || secrets.FASTAPICLOUD_TOKEN }}
+          FASTAPI_CLOUD_APP_ID: ${{ secrets.FASTAPI_CLOUD_APP_ID || secrets.FASTAPICLOUD_APP_ID }}
