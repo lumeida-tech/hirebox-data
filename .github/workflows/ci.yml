@@ -88,7 +88,7 @@ jobs:
       - lint
       - type-check
       - build-image
-    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    if: github.event_name != 'pull_request'  # ici j'avis conditionné le deploiyement uniquement sur la branch main : if: github.event_name != 'pull_request'if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
 
     env:
       FASTAPI_CLOUD_TOKEN: ${{ secrets.FASTAPI_CLOUD_TOKEN }}
