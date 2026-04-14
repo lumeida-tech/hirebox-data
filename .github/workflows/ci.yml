@@ -81,41 +81,29 @@ jobs:
   # Deploie l'application sur FastAPI Cloud uniquement apres un build reussi
   # et seulement lors d'un push sur la branche main.
   deploy-fastapicloud:
-    name: Deploy to FastAPI Cloud
-    runs-on: ubuntu-latest
-    needs:
-      - lint
-      - type-check
-      - build-image
-    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+  name: Deploy to FastAPI Cloud
+  runs-on: ubuntu-latest
+  needs:
+    - lint
+    - type-check
+    - build-image
+  if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v5
-        with:
-          fetch-depth: 0
+  env:
+    FASTAPI_CLOUD_TOKEN: ${{ secrets.FASTAPI_CLOUD_TOKEN }}
+    FASTAPI_CLOUD_APP_ID: ${{ secrets.FASTAPI_CLOUD_APP_ID }}
 
-      - name: Install uv
-        uses: astral-sh/setup-uv@v7
-        with:
-          enable-cache: true
+  steps:
+    - uses: actions/checkout@v5
 
-      - name: Validate FastAPI Cloud secrets
-        env:
-          FASTAPI_CLOUD_TOKEN: ${{ secrets.FASTAPI_CLOUD_TOKEN || secrets.FASTAPICLOUD_TOKEN }}
-          FASTAPI_CLOUD_APP_ID: ${{ secrets.FASTAPI_CLOUD_APP_ID || secrets.FASTAPICLOUD_APP_ID }}
-        run: |
-          test -n "$FASTAPI_CLOUD_TOKEN" || {
-            echo "Missing FASTAPI_CLOUD_TOKEN (recommended) or FASTAPICLOUD_TOKEN secret."
-            exit 1
-          }
-          test -n "$FASTAPI_CLOUD_APP_ID" || {
-            echo "Missing FASTAPI_CLOUD_APP_ID (recommended) or FASTAPICLOUD_APP_ID secret."
-            exit 1
-          }
+    - uses: astral-sh/setup-uv@v7
+      with:
+        enable-cache: true
 
-      - name: Deploy application
-        run: uv run fastapi deploy
-        env:
-          FASTAPI_CLOUD_TOKEN: ${{ secrets.FASTAPI_CLOUD_TOKEN || secrets.FASTAPICLOUD_TOKEN }}
-          FASTAPI_CLOUD_APP_ID: ${{ secrets.FASTAPI_CLOUD_APP_ID || secrets.FASTAPICLOUD_APP_ID }}
+    - name: Validate secrets
+      run: |
+        test -n "$FASTAPI_CLOUD_TOKEN" || exit 1
+        test -n "$FASTAPI_CLOUD_APP_ID" || exit 1
+
+    - name: Deploy application
+      run: uv run fastapi deploy
