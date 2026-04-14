@@ -80,30 +80,33 @@ jobs:
   # Etape 4:
   # Deploie l'application sur FastAPI Cloud uniquement apres un build reussi
   # et seulement lors d'un push sur la branche main.
+  
   deploy-fastapicloud:
-  name: Deploy to FastAPI Cloud
-  runs-on: ubuntu-latest
-  needs:
-    - lint
-    - type-check
-    - build-image
-  if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    name: Deploy to FastAPI Cloud
+    runs-on: ubuntu-latest
+    needs:
+      - lint
+      - type-check
+      - build-image
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
 
-  env:
-    FASTAPI_CLOUD_TOKEN: ${{ secrets.FASTAPI_CLOUD_TOKEN }}
-    FASTAPI_CLOUD_APP_ID: ${{ secrets.FASTAPI_CLOUD_APP_ID }}
+    env:
+      FASTAPI_CLOUD_TOKEN: ${{ secrets.FASTAPI_CLOUD_TOKEN }}
+      FASTAPI_CLOUD_APP_ID: ${{ secrets.FASTAPI_CLOUD_APP_ID }}
 
-  steps:
-    - uses: actions/checkout@v5
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
 
-    - uses: astral-sh/setup-uv@v7
-      with:
-        enable-cache: true
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          enable-cache: true
 
-    - name: Validate secrets
-      run: |
-        test -n "$FASTAPI_CLOUD_TOKEN" || exit 1
-        test -n "$FASTAPI_CLOUD_APP_ID" || exit 1
+      - name: Validate secrets
+        run: |
+          test -n "$FASTAPI_CLOUD_TOKEN" || exit 1
+          test -n "$FASTAPI_CLOUD_APP_ID" || exit 1
 
-    - name: Deploy application
-      run: uv run fastapi deploy
+      - name: Deploy application
+        run: uv run fastapi deploy
