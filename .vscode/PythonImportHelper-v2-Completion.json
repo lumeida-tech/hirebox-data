@@ -52,11 +52,35 @@
         "documentation": {}
     },
     {
-        "label": "dataclass",
-        "importPath": "dataclasses",
-        "description": "dataclasses",
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
         "isExtraImport": true,
-        "detail": "dataclasses",
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "Question",
+        "importPath": "src.question",
+        "description": "src.question",
+        "isExtraImport": true,
+        "detail": "src.question",
+        "documentation": {}
+    },
+    {
+        "label": "Question",
+        "importPath": "src.question",
+        "description": "src.question",
+        "isExtraImport": true,
+        "detail": "src.question",
+        "documentation": {}
+    },
+    {
+        "label": "Question",
+        "importPath": "src.question",
+        "description": "src.question",
+        "isExtraImport": true,
+        "detail": "src.question",
         "documentation": {}
     },
     {
@@ -68,19 +92,59 @@
         "documentation": {}
     },
     {
-        "label": "List",
-        "importPath": "typing",
-        "description": "typing",
+        "label": "dataclass",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
         "isExtraImport": true,
-        "detail": "typing",
+        "detail": "dataclasses",
         "documentation": {}
     },
     {
-        "label": "List",
-        "importPath": "typing",
-        "description": "typing",
+        "label": "QuestionGenerator",
+        "importPath": "src.spi",
+        "description": "src.spi",
         "isExtraImport": true,
-        "detail": "typing",
+        "detail": "src.spi",
+        "documentation": {}
+    },
+    {
+        "label": "Question",
+        "importPath": "src.spi",
+        "description": "src.spi",
+        "isExtraImport": true,
+        "detail": "src.spi",
+        "documentation": {}
+    },
+    {
+        "label": "QuestionGenerator",
+        "importPath": "src.spi",
+        "description": "src.spi",
+        "isExtraImport": true,
+        "detail": "src.spi",
+        "documentation": {}
+    },
+    {
+        "label": "OpenAI",
+        "importPath": "openai",
+        "description": "openai",
+        "isExtraImport": true,
+        "detail": "openai",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
         "documentation": {}
     },
     {
@@ -89,54 +153,6 @@
         "description": "typing",
         "isExtraImport": true,
         "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "List",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Question",
-        "importPath": "src.question",
-        "description": "src.question",
-        "isExtraImport": true,
-        "detail": "src.question",
-        "documentation": {}
-    },
-    {
-        "label": "Question",
-        "importPath": "src.question",
-        "description": "src.question",
-        "isExtraImport": true,
-        "detail": "src.question",
-        "documentation": {}
-    },
-    {
-        "label": "QuestionGenerator",
-        "importPath": "src.spi",
-        "description": "src.spi",
-        "isExtraImport": true,
-        "detail": "src.spi",
-        "documentation": {}
-    },
-    {
-        "label": "Question",
-        "importPath": "src.spi",
-        "description": "src.spi",
-        "isExtraImport": true,
-        "detail": "src.spi",
-        "documentation": {}
-    },
-    {
-        "label": "QuestionGenerator",
-        "importPath": "src.spi",
-        "description": "src.spi",
-        "isExtraImport": true,
-        "detail": "src.spi",
         "documentation": {}
     },
     {
@@ -177,6 +193,14 @@
         "description": "src.generate_question_handler",
         "isExtraImport": true,
         "detail": "src.generate_question_handler",
+        "documentation": {}
+    },
+    {
+        "label": "GenerateQuestionsFromCVDto",
+        "importPath": "src.api",
+        "description": "src.api",
+        "isExtraImport": true,
+        "detail": "src.api",
         "documentation": {}
     },
     {
@@ -273,7 +297,16 @@
         "kind": 6,
         "importPath": "src.api",
         "description": "src.api",
-        "peekOfCode": "class GenerateQuestionsFromCVSchema(BaseModel):\n    number: int\n    cv_content: str",
+        "peekOfCode": "class GenerateQuestionsFromCVSchema(BaseModel):\n    cv_content: str=\"Contenu texte du CV.\"\nclass GenerateQuestionsFromCVDto(BaseModel):\n    question: Question",
+        "detail": "src.api",
+        "documentation": {}
+    },
+    {
+        "label": "GenerateQuestionsFromCVDto",
+        "kind": 6,
+        "importPath": "src.api",
+        "description": "src.api",
+        "peekOfCode": "class GenerateQuestionsFromCVDto(BaseModel):\n    question: Question",
         "detail": "src.api",
         "documentation": {}
     },
@@ -282,7 +315,7 @@
         "kind": 6,
         "importPath": "src.generate_question_handler",
         "description": "src.generate_question_handler",
-        "peekOfCode": "class GenerateQuestionFromCVCommandHandler:\n    cv_content: str\n    number_of_question: int = 1\nclass GenerateQuestionFromCVHandler():\n    def __init__(self, question_generator: QuestionGenerator) -> None:\n        self.question_generator =question_generator\n    async def execute(self, command: GenerateQuestionFromCVCommandHandler)-> List[Question]:\n        if command.number_of_question < 1:\n            raise Exception(\"Le nombre de questions ne peut pas être < 1\")\n        questions = await self.question_generator.generate_questions(context=command.cv_content,number=command.number_of_question)",
+        "peekOfCode": "class GenerateQuestionFromCVCommandHandler:\n    cv_content: str\nclass GenerateQuestionFromCVHandler():\n    def __init__(self, question_generator: QuestionGenerator) -> None:\n        self.question_generator =question_generator\n    async def execute(self, command: GenerateQuestionFromCVCommandHandler)-> Question:\n        question = await self.question_generator.generate_question(cv_content=command.cv_content,)\n        return question",
         "detail": "src.generate_question_handler",
         "documentation": {}
     },
@@ -291,8 +324,17 @@
         "kind": 6,
         "importPath": "src.generate_question_handler",
         "description": "src.generate_question_handler",
-        "peekOfCode": "class GenerateQuestionFromCVHandler():\n    def __init__(self, question_generator: QuestionGenerator) -> None:\n        self.question_generator =question_generator\n    async def execute(self, command: GenerateQuestionFromCVCommandHandler)-> List[Question]:\n        if command.number_of_question < 1:\n            raise Exception(\"Le nombre de questions ne peut pas être < 1\")\n        questions = await self.question_generator.generate_questions(context=command.cv_content,number=command.number_of_question)\n        return questions",
+        "peekOfCode": "class GenerateQuestionFromCVHandler():\n    def __init__(self, question_generator: QuestionGenerator) -> None:\n        self.question_generator =question_generator\n    async def execute(self, command: GenerateQuestionFromCVCommandHandler)-> Question:\n        question = await self.question_generator.generate_question(cv_content=command.cv_content,)\n        return question",
         "detail": "src.generate_question_handler",
+        "documentation": {}
+    },
+    {
+        "label": "QuestionModel",
+        "kind": 6,
+        "importPath": "src.glm_ai",
+        "description": "src.glm_ai",
+        "peekOfCode": "class QuestionModel(BaseModel):\n    title: str\n    question_body: str\n    applicant_name: str\ndef load_cv_content(cv_file_name: str) -> str:\n    with open(cv_file_name, \"r\", encoding=\"utf-8\") as cv_file:\n        return cv_file.read()\nclass Z_AI_Question_Generator(QuestionGenerator):\n    def __init__(self, prompt: str) -> None:\n        self.__prompt = prompt",
+        "detail": "src.glm_ai",
         "documentation": {}
     },
     {
@@ -300,7 +342,25 @@
         "kind": 6,
         "importPath": "src.glm_ai",
         "description": "src.glm_ai",
-        "peekOfCode": "class Z_AI_Question_Generator(QuestionGenerator):\n    def __init__(self, prompt: str) -> None:\n        self.__prompt = prompt\n    async def generate_new_question(self, context: str) -> Question:\n        \"\"\"\n            Implementer la generation d une seul question\n        \"\"\"\n        raise NotImplementedError(\"Veuillez implementer cette methode!\")\n    async def generate_questions(self, context: str, number: int) -> List[Question]:\n        \"\"\"",
+        "peekOfCode": "class Z_AI_Question_Generator(QuestionGenerator):\n    def __init__(self, prompt: str) -> None:\n        self.__prompt = prompt\n        self.__model = \"zai-org/GLM-5.1:together\"\n    async def generate_question(self, cv_content: str) -> Question:\n        \"\"\"\n        Génère une seule question à partir du CV fourni.\n        \"\"\"\n        system_prompt = (\n            \"Tu es un recruteur expert. \"",
+        "detail": "src.glm_ai",
+        "documentation": {}
+    },
+    {
+        "label": "load_cv_content",
+        "kind": 2,
+        "importPath": "src.glm_ai",
+        "description": "src.glm_ai",
+        "peekOfCode": "def load_cv_content(cv_file_name: str) -> str:\n    with open(cv_file_name, \"r\", encoding=\"utf-8\") as cv_file:\n        return cv_file.read()\nclass Z_AI_Question_Generator(QuestionGenerator):\n    def __init__(self, prompt: str) -> None:\n        self.__prompt = prompt\n        self.__model = \"zai-org/GLM-5.1:together\"\n    async def generate_question(self, cv_content: str) -> Question:\n        \"\"\"\n        Génère une seule question à partir du CV fourni.",
+        "detail": "src.glm_ai",
+        "documentation": {}
+    },
+    {
+        "label": "client",
+        "kind": 5,
+        "importPath": "src.glm_ai",
+        "description": "src.glm_ai",
+        "peekOfCode": "client = OpenAI(\n    base_url=\"https://router.huggingface.co/v1\",\n    api_key=os.getenv(\"HF_TOKEN\"),\n)\nclass QuestionModel(BaseModel):\n    title: str\n    question_body: str\n    applicant_name: str\ndef load_cv_content(cv_file_name: str) -> str:\n    with open(cv_file_name, \"r\", encoding=\"utf-8\") as cv_file:",
         "detail": "src.glm_ai",
         "documentation": {}
     },
@@ -309,7 +369,7 @@
         "kind": 6,
         "importPath": "src.question",
         "description": "src.question",
-        "peekOfCode": "class Question:\n    title: str\n    number: int\n    body: str",
+        "peekOfCode": "class Question:\n    title: str\n    applicant_full_name: str\n    number: int\n    body: str",
         "detail": "src.question",
         "documentation": {}
     },
@@ -318,7 +378,7 @@
         "kind": 6,
         "importPath": "src.spi",
         "description": "src.spi",
-        "peekOfCode": "class QuestionGenerator(Protocol):\n    async def generate_new_question(self, context: str) -> Question:...\n    async def generate_questions(self, context: str, number: int) -> List[Question]:...",
+        "peekOfCode": "class QuestionGenerator(Protocol):\n    async def generate_question(self, cv_content: str) -> Question:...",
         "detail": "src.spi",
         "documentation": {}
     },
@@ -327,7 +387,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "app = FastAPI()\n@app.get(\"/\")\nasync def root():\n    return {\"message\": \"Hello Hirebox\"}\n@app.get(\"/ping\")\nasync def ping_pong():\n    return {\"message\": \"pong\", \"status\": \"OK\"}\nwith open(\"generate_cv_questions_prompt.txt\", \"r\") as prompt_file:\n    GENERATE_CV_PROMPT = prompt_file.read()\n@app.post(\"/generate-questions-from-cv\")",
+        "peekOfCode": "app = FastAPI()\n@app.get(\"/\")\nasync def root():\n    return {\"message\": \"Hello Hirebox\"}\n@app.get(\"/ping\")\nasync def ping_pong():\n    return {\"message\": \"pong\", \"status\": \"OK\"}\nGENERATE_CV_QUESTION_PROMPT_FILE=os.getenv(\"GENERATE_CV_QUESTION_PROMPT_FILE\", \"\")\nwith open(GENERATE_CV_QUESTION_PROMPT_FILE, \"r\") as prompt_file:\n    GENERATE_CV_PROMPT = prompt_file.read()",
         "detail": "main",
         "documentation": {}
     }

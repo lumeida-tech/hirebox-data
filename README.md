@@ -50,24 +50,3 @@ docker build -f dockerfile -t hirebox-ai:test .
 docker build -f dockerfile -t hirebox-ai .
 docker compose up -d
 ```
-
-## GitHub Actions
-
-La pipeline GitHub Actions est definie dans `.github/workflows/ci.yml` avec 4 etapes:
-
-- lint et verification de formatage avec `ruff`
-- verification de typage statique avec `mypy`
-- build de l'image Docker via le `dockerfile`
-- deploiement sur FastAPI Cloud uniquement sur la branche `main`
-
-Secrets GitHub a configurer pour le deploiement:
-
-- `FASTAPI_CLOUD_TOKEN` (nom officiel recommande)
-- `FASTAPI_CLOUD_APP_ID`
-
-Compatibilite ajoutee si tu as deja cree les anciens noms:
-
-- `FASTAPICLOUD_TOKEN`
-- `FASTAPICLOUD_APP_ID`
-
-Le deploiement CI utilise `uv run fastapi deploy`, avec l'entree FastAPI configuree sur `main:app`.
