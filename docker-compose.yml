@@ -1,0 +1,15 @@
+services:
+
+  apps_hirebox-ai:
+    build: .
+    container_name: hirebox-ai
+    ports:
+      - "8005:8005"
+    env_file: .env
+    restart: unless-stopped
+    networks:
+      - hirebox-network
+
+networks:
+  hirebox-network:
+    driver: bridge

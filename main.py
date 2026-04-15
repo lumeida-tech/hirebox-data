@@ -10,6 +10,7 @@ from src.api import GenerateQuestionsFromCVDto, GenerateQuestionsFromCVSchema
 
 load_dotenv()
 
+
 app = FastAPI()
 
 
