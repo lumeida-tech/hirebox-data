@@ -1,7 +1,6 @@
-from typing import Protocol, List
+from typing import Protocol
 from src.question import Question
 
 
 class QuestionGenerator(Protocol):
-    async def generate_new_question(self, context: str) -> Question:...
-    async def generate_questions(self, context: str, number: int) -> List[Question]:...
+    async def generate_question(self, cv_content: str) -> Question:...
