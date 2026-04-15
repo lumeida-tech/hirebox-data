@@ -18,6 +18,7 @@ app = FastAPI()
 async def root():
     return {"message": "Hello Hirebox"}
 
+
 @app.get("/ping")
 async def ping_pong():
     return {"message": "pong", "status": "OK"}

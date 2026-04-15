@@ -2,14 +2,15 @@ from dataclasses import dataclass
 from src.question import Question
 from src.spi import QuestionGenerator
 
+
 @dataclass
 class GenerateQuestionFromCVCommandHandler:
     cv_content: str
 
-class GenerateQuestionFromCVHandler():
 
+class GenerateQuestionFromCVHandler:
     def __init__(self, question_generator: QuestionGenerator) -> None:
-        self.question_generator =question_generator
+        self.question_generator = question_generator
 
     async def execute(self, command: GenerateQuestionFromCVCommandHandler)-> Question:
         
