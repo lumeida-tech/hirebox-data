@@ -23,6 +23,7 @@ def load_cv_content(cv_file_name: str) -> str:
         return cv_file.read()
 
 
+
 class Z_AI_Question_Generator(QuestionGenerator):
     def __init__(self, prompt: str) -> None:
         self.__prompt = prompt
