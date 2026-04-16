@@ -13,3 +13,7 @@ wheels/
 .trash
 
 fake_cv.txt
+
+# Modèles locaux
+models/
+!models/.gitkeep
