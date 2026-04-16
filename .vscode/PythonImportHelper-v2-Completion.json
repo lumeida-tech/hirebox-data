@@ -84,19 +84,62 @@
         "documentation": {}
     },
     {
-        "label": "dataclass",
-        "importPath": "dataclasses",
-        "description": "dataclasses",
+        "label": "Question",
+        "importPath": "src.question",
+        "description": "src.question",
         "isExtraImport": true,
-        "detail": "dataclasses",
+        "detail": "src.question",
         "documentation": {}
     },
     {
-        "label": "dataclass",
-        "importPath": "dataclasses",
-        "description": "dataclasses",
+        "label": "json",
+        "kind": 6,
         "isExtraImport": true,
-        "detail": "dataclasses",
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "torch",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "torch",
+        "description": "torch",
+        "detail": "torch",
+        "documentation": {}
+    },
+    {
+        "label": "AutoTokenizer",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "Gemma4ForConditionalGeneration",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "QuestionGenerator",
+        "importPath": "src.spi",
+        "description": "src.spi",
+        "isExtraImport": true,
+        "detail": "src.spi",
         "documentation": {}
     },
     {
@@ -124,6 +167,46 @@
         "documentation": {}
     },
     {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "dataclass",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "dataclass",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
         "label": "OpenAI",
         "importPath": "openai",
         "description": "openai",
@@ -132,27 +215,19 @@
         "documentation": {}
     },
     {
-        "label": "load_dotenv",
-        "importPath": "dotenv",
-        "description": "dotenv",
-        "isExtraImport": true,
-        "detail": "dotenv",
-        "documentation": {}
-    },
-    {
-        "label": "load_dotenv",
-        "importPath": "dotenv",
-        "description": "dotenv",
-        "isExtraImport": true,
-        "detail": "dotenv",
-        "documentation": {}
-    },
-    {
         "label": "Protocol",
         "importPath": "typing",
         "description": "typing",
         "isExtraImport": true,
         "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "asynccontextmanager",
+        "importPath": "contextlib",
+        "description": "contextlib",
+        "isExtraImport": true,
+        "detail": "contextlib",
         "documentation": {}
     },
     {
@@ -177,6 +252,22 @@
         "description": "src.glm_ai",
         "isExtraImport": true,
         "detail": "src.glm_ai",
+        "documentation": {}
+    },
+    {
+        "label": "Gemma_Question_Generator",
+        "importPath": "src.gemma_ai",
+        "description": "src.gemma_ai",
+        "isExtraImport": true,
+        "detail": "src.gemma_ai",
+        "documentation": {}
+    },
+    {
+        "label": "Gemma_Question_Generator",
+        "importPath": "src.gemma_ai",
+        "description": "src.gemma_ai",
+        "isExtraImport": true,
+        "detail": "src.gemma_ai",
         "documentation": {}
     },
     {
@@ -212,84 +303,93 @@
         "documentation": {}
     },
     {
+        "label": "asyncio",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "asyncio",
+        "description": "asyncio",
+        "detail": "asyncio",
+        "documentation": {}
+    },
+    {
         "label": "bin_dir",
         "kind": 5,
-        "importPath": ".venv.Scripts.activate_this",
-        "description": ".venv.Scripts.activate_this",
-        "peekOfCode": "bin_dir = os.path.dirname(abs_file)\nbase = bin_dir[: -len(\"Scripts\") - 1]  # strip away the bin part from the __file__, plus the path separator\n# prepend bin to PATH (this file is inside the bin directory)\nos.environ[\"PATH\"] = os.pathsep.join([bin_dir, *os.environ.get(\"PATH\", \"\").split(os.pathsep)])\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"hirebox-ai\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"..\\\\Lib\\\\site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))",
-        "detail": ".venv.Scripts.activate_this",
+        "importPath": ".venv.bin.activate_this",
+        "description": ".venv.bin.activate_this",
+        "peekOfCode": "bin_dir = os.path.dirname(abs_file)\nbase = bin_dir[: -len(\"bin\") - 1]  # strip away the bin part from the __file__, plus the path separator\n# prepend bin to PATH (this file is inside the bin directory)\nos.environ[\"PATH\"] = os.pathsep.join([bin_dir, *os.environ.get(\"PATH\", \"\").split(os.pathsep)])\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"hirebox-ai\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"../lib/python3.14/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))",
+        "detail": ".venv.bin.activate_this",
         "documentation": {}
     },
     {
         "label": "base",
         "kind": 5,
-        "importPath": ".venv.Scripts.activate_this",
-        "description": ".venv.Scripts.activate_this",
-        "peekOfCode": "base = bin_dir[: -len(\"Scripts\") - 1]  # strip away the bin part from the __file__, plus the path separator\n# prepend bin to PATH (this file is inside the bin directory)\nos.environ[\"PATH\"] = os.pathsep.join([bin_dir, *os.environ.get(\"PATH\", \"\").split(os.pathsep)])\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"hirebox-ai\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"..\\\\Lib\\\\site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path)",
-        "detail": ".venv.Scripts.activate_this",
+        "importPath": ".venv.bin.activate_this",
+        "description": ".venv.bin.activate_this",
+        "peekOfCode": "base = bin_dir[: -len(\"bin\") - 1]  # strip away the bin part from the __file__, plus the path separator\n# prepend bin to PATH (this file is inside the bin directory)\nos.environ[\"PATH\"] = os.pathsep.join([bin_dir, *os.environ.get(\"PATH\", \"\").split(os.pathsep)])\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"hirebox-ai\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"../lib/python3.14/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path)",
+        "detail": ".venv.bin.activate_this",
         "documentation": {}
     },
     {
         "label": "os.environ[\"PATH\"]",
         "kind": 5,
-        "importPath": ".venv.Scripts.activate_this",
-        "description": ".venv.Scripts.activate_this",
-        "peekOfCode": "os.environ[\"PATH\"] = os.pathsep.join([bin_dir, *os.environ.get(\"PATH\", \"\").split(os.pathsep)])\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"hirebox-ai\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"..\\\\Lib\\\\site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix",
-        "detail": ".venv.Scripts.activate_this",
+        "importPath": ".venv.bin.activate_this",
+        "description": ".venv.bin.activate_this",
+        "peekOfCode": "os.environ[\"PATH\"] = os.pathsep.join([bin_dir, *os.environ.get(\"PATH\", \"\").split(os.pathsep)])\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"hirebox-ai\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"../lib/python3.14/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix",
+        "detail": ".venv.bin.activate_this",
         "documentation": {}
     },
     {
         "label": "os.environ[\"VIRTUAL_ENV\"]",
         "kind": 5,
-        "importPath": ".venv.Scripts.activate_this",
-        "description": ".venv.Scripts.activate_this",
-        "peekOfCode": "os.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"hirebox-ai\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"..\\\\Lib\\\\site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
-        "detail": ".venv.Scripts.activate_this",
+        "importPath": ".venv.bin.activate_this",
+        "description": ".venv.bin.activate_this",
+        "peekOfCode": "os.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"hirebox-ai\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"../lib/python3.14/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": ".venv.bin.activate_this",
         "documentation": {}
     },
     {
         "label": "os.environ[\"VIRTUAL_ENV_PROMPT\"]",
         "kind": 5,
-        "importPath": ".venv.Scripts.activate_this",
-        "description": ".venv.Scripts.activate_this",
-        "peekOfCode": "os.environ[\"VIRTUAL_ENV_PROMPT\"] = \"hirebox-ai\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"..\\\\Lib\\\\site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
-        "detail": ".venv.Scripts.activate_this",
+        "importPath": ".venv.bin.activate_this",
+        "description": ".venv.bin.activate_this",
+        "peekOfCode": "os.environ[\"VIRTUAL_ENV_PROMPT\"] = \"hirebox-ai\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"../lib/python3.14/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": ".venv.bin.activate_this",
         "documentation": {}
     },
     {
         "label": "prev_length",
         "kind": 5,
-        "importPath": ".venv.Scripts.activate_this",
-        "description": ".venv.Scripts.activate_this",
-        "peekOfCode": "prev_length = len(sys.path)\nfor lib in \"..\\\\Lib\\\\site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
-        "detail": ".venv.Scripts.activate_this",
+        "importPath": ".venv.bin.activate_this",
+        "description": ".venv.bin.activate_this",
+        "peekOfCode": "prev_length = len(sys.path)\nfor lib in \"../lib/python3.14/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": ".venv.bin.activate_this",
         "documentation": {}
     },
     {
         "label": "sys.path[:]",
         "kind": 5,
-        "importPath": ".venv.Scripts.activate_this",
-        "description": ".venv.Scripts.activate_this",
+        "importPath": ".venv.bin.activate_this",
+        "description": ".venv.bin.activate_this",
         "peekOfCode": "sys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
-        "detail": ".venv.Scripts.activate_this",
+        "detail": ".venv.bin.activate_this",
         "documentation": {}
     },
     {
         "label": "sys.real_prefix",
         "kind": 5,
-        "importPath": ".venv.Scripts.activate_this",
-        "description": ".venv.Scripts.activate_this",
+        "importPath": ".venv.bin.activate_this",
+        "description": ".venv.bin.activate_this",
         "peekOfCode": "sys.real_prefix = sys.prefix\nsys.prefix = base",
-        "detail": ".venv.Scripts.activate_this",
+        "detail": ".venv.bin.activate_this",
         "documentation": {}
     },
     {
         "label": "sys.prefix",
         "kind": 5,
-        "importPath": ".venv.Scripts.activate_this",
-        "description": ".venv.Scripts.activate_this",
+        "importPath": ".venv.bin.activate_this",
+        "description": ".venv.bin.activate_this",
         "peekOfCode": "sys.prefix = base",
-        "detail": ".venv.Scripts.activate_this",
+        "detail": ".venv.bin.activate_this",
         "documentation": {}
     },
     {
@@ -308,6 +408,24 @@
         "description": "src.api",
         "peekOfCode": "class GenerateQuestionsFromCVDto(BaseModel):\n    question: Question",
         "detail": "src.api",
+        "documentation": {}
+    },
+    {
+        "label": "Gemma_Question_Generator",
+        "kind": 6,
+        "importPath": "src.gemma_ai",
+        "description": "src.gemma_ai",
+        "peekOfCode": "class Gemma_Question_Generator(QuestionGenerator):\n    def __init__(self, prompt: str) -> None:\n        self.__prompt = prompt\n        self.__tokenizer = AutoTokenizer.from_pretrained(MODEL_PATH)\n        self.__model = Gemma4ForConditionalGeneration.from_pretrained(\n            MODEL_PATH,\n            torch_dtype=torch.bfloat16,\n        )\n    async def generate_question(self, cv_content: str) -> Question:\n        system_prompt = (",
+        "detail": "src.gemma_ai",
+        "documentation": {}
+    },
+    {
+        "label": "MODEL_PATH",
+        "kind": 5,
+        "importPath": "src.gemma_ai",
+        "description": "src.gemma_ai",
+        "peekOfCode": "MODEL_PATH = os.getenv(\"GEMMA_MODEL_PATH\", \"models/google/gemma-4-E2B-it\")\nclass Gemma_Question_Generator(QuestionGenerator):\n    def __init__(self, prompt: str) -> None:\n        self.__prompt = prompt\n        self.__tokenizer = AutoTokenizer.from_pretrained(MODEL_PATH)\n        self.__model = Gemma4ForConditionalGeneration.from_pretrained(\n            MODEL_PATH,\n            torch_dtype=torch.bfloat16,\n        )\n    async def generate_question(self, cv_content: str) -> Question:",
+        "detail": "src.gemma_ai",
         "documentation": {}
     },
     {
@@ -383,11 +501,20 @@
         "documentation": {}
     },
     {
+        "label": "GENERATE_CV_QUESTION_PROMPT_FILE",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "GENERATE_CV_QUESTION_PROMPT_FILE = os.getenv(\n    \"GENERATE_CV_QUESTION_PROMPT_FILE\", \"\")\nwith open(GENERATE_CV_QUESTION_PROMPT_FILE, \"r\") as prompt_file:\n    GENERATE_CV_PROMPT = prompt_file.read()\ngemma_question_generator: Gemma_Question_Generator | None = None\n@asynccontextmanager\nasync def lifespan(app: FastAPI):\n    global gemma_question_generator\n    gemma_question_generator = Gemma_Question_Generator(GENERATE_CV_PROMPT)\n    yield",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
         "label": "app",
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "app = FastAPI()\n@app.get(\"/\")\nasync def root():\n    return {\"message\": \"Hello Hirebox\"}\n@app.get(\"/ping\")\nasync def ping_pong():\n    return {\"message\": \"pong\", \"status\": \"OK\"}\nGENERATE_CV_QUESTION_PROMPT_FILE=os.getenv(\"GENERATE_CV_QUESTION_PROMPT_FILE\", \"\")\nwith open(GENERATE_CV_QUESTION_PROMPT_FILE, \"r\") as prompt_file:\n    GENERATE_CV_PROMPT = prompt_file.read()",
+        "peekOfCode": "app = FastAPI(lifespan=lifespan)\n@app.get(\"/\")\nasync def root():\n    return {\"message\": \"Hello Hirebox\"}\n@app.get(\"/ping\")\nasync def ping_pong():\n    return {\"message\": \"pong\", \"status\": \"OK\"}\n@app.post(\"/generate-question-from-cv\", response_model=GenerateQuestionsFromCVDto)\nasync def generate_questions_from_cv(data: GenerateQuestionsFromCVSchema):\n    question_generator = Z_AI_Question_Generator(GENERATE_CV_PROMPT)",
         "detail": "main",
         "documentation": {}
     }
