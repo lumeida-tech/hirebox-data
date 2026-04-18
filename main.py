@@ -17,10 +17,18 @@ with open(GENERATE_CV_QUESTION_PROMPT_FILE, "r") as prompt_file:
 
 gemma_question_generator: Gemma_Question_Generator | None = None
 
-@asynccontextmanager
+"""@asynccontextmanager
 async def lifespan(app: FastAPI):
     global gemma_question_generator
     gemma_question_generator = Gemma_Question_Generator(GENERATE_CV_PROMPT)
+    yield"""
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    global gemma_question_generator
+    try:
+        gemma_question_generator = Gemma_Question_Generator(GENERATE_CV_PROMPT)
+    except Exception as e:
+        print(f"⚠️  Gemma non chargé : {e}")
     yield
 
 app = FastAPI(
