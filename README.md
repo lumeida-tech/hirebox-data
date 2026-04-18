@@ -29,7 +29,7 @@ uvx hf download google/gemma-4-E2B-it --local-dir models/google/gemma-4-E2B-it
 **5. Démarrer le serveur**
 Lance FastAPI en mode développement sur le port 8005.
 ```bash
-uv run fastapi dev  # port 8000 pour le local et 8005 sur docker
+uv run fastapi dev main.py # port 8000 pour le local et 8005 sur docker
 ```
 
 ---
