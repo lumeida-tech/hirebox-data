@@ -5,7 +5,7 @@
 ## Installation
 **1. Cloner le dépôt**
 ```bash
-git clone https://github.com/lumeida-tech/hirebox-data.git hirebox-ai
+git clone --branch=chore/retire-gemma-ai https://github.com/lumeida-tech/hirebox-data.git hirebox-ai
 cd hirebox-ai
 ```
 
