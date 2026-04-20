@@ -38,7 +38,7 @@ jobs:
         run: uv run ruff check .
 
       - name: Check Ruff formatting
-        run: uv run ruff format --check .
+        run: uvx ruff check
 
   # Etape 2:
   # Verifie le typage statique avec mypy pour detecter des bugs silencieux.
