@@ -1,3 +1,4 @@
+# type: ignore
 import os
 from openai import OpenAI
 from pydantic import BaseModel
@@ -11,7 +12,6 @@ client = OpenAI(
 )
 
 
-
 class QuestionModel(BaseModel):
     title: str
     question_body: str
@@ -23,8 +23,9 @@ def load_cv_content(cv_file_name: str) -> str:
         return cv_file.read()
 
 
-
 class Z_AI_Question_Generator(QuestionGenerator):
+    """Implémentation de QuestionGenerator utilisant le modèle GLM-5.1 de Hugging Face."""
+
     def __init__(self, prompt: str) -> None:
         self.__prompt = prompt
         self.__model = "zai-org/GLM-5.1:together"
@@ -54,7 +55,7 @@ class Z_AI_Question_Generator(QuestionGenerator):
             response_format=QuestionModel,
         )
 
-        parsed: QuestionModel = completion.choices[0].message.parsed  # type: ignore
+        parsed: QuestionModel = completion.choices[0].message.parsed
 
         return Question(
             title=parsed.title,
@@ -62,4 +63,3 @@ class Z_AI_Question_Generator(QuestionGenerator):
             body=parsed.question_body.replace("\n", ""),
             applicant_full_name=parsed.applicant_name,
         )
-    

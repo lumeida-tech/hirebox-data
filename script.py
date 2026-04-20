@@ -11,3 +11,7 @@ async def main() -> None:
 
 if __name__ == "__main__":
     asyncio.run(main())
+
+
+user: str = ""
+user_age = 12

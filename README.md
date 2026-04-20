@@ -75,3 +75,6 @@ docker compose up -d
 ```bash
 curl.exe -X POST "http://127.0.0.1:8000/generate-question-from-cv" -H "Content-Type: application/json" -H "API_KEY: HB_MPW_3YnwaiG0_peYMxa4MNBD5Ygg-sWrCtCnppsXPGw" -d "{\"cv_content\":\"Developpeur backend Python avec 5 ans d'experience\"}"
 ```
+
+
+# uv run uvicorn main:app --host 0.0.0.0 --port 8005
