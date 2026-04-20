@@ -1,13 +1,14 @@
 from contextlib import asynccontextmanager
 from dotenv import load_dotenv
 
-from fastapi import FastAPI
+from fastapi import Depends, FastAPI
 from fastapi.exceptions import HTTPException
 import os
 from src.glm_ai import Z_AI_Question_Generator
 # from src.gemma_ai import Gemma_Question_Generator
 from src.generate_question_handler import GenerateQuestionFromCVCommandHandler, GenerateQuestionFromCVHandler
 from src.api import GenerateQuestionsFromCVDto, GenerateQuestionsFromCVSchema
+from src.security import verify_backend_request
 
 load_dotenv()
 
@@ -29,17 +30,16 @@ async def lifespan(app: FastAPI):
 app = FastAPI(lifespan=lifespan)
 
 
-@app.get("/")
-async def root():
-    return {"message": "Hello Hirebox"}
-
-
 @app.get("/ping")
 async def ping_pong():
     return {"message": "pong", "status": "OK"}
 
 
-@app.post("/generate-question-from-cv", response_model=GenerateQuestionsFromCVDto)
+@app.post(
+    "/generate-question-from-cv",
+    response_model=GenerateQuestionsFromCVDto,
+    dependencies=[Depends(verify_backend_request)],
+)
 async def generate_questions_from_cv(data: GenerateQuestionsFromCVSchema):
     question_generator = Z_AI_Question_Generator(GENERATE_CV_PROMPT)
     handler = GenerateQuestionFromCVHandler(question_generator)
@@ -49,7 +49,7 @@ async def generate_questions_from_cv(data: GenerateQuestionsFromCVSchema):
     try:
         question_generated = await handler.execute(command)
     except Exception as e:
-        return HTTPException(status_code=400, detail=str(e))
+        raise HTTPException(status_code=400, detail=str(e))
     return GenerateQuestionsFromCVDto(question=question_generated)
 
 
