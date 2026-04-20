@@ -61,21 +61,7 @@ jobs:
       - name: Run mypy
         run: uv run mypy
 
-  # Etape 3:
-  # Construit l'image Docker seulement si les controles qualite sont valides.
-  build-image:
-    name: Build image
-    runs-on: ubuntu-latest
-    needs:
-      - lint
-      - type-check
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v5
-
-      - name: Build Docker image
-        run: docker build --file dockerfile --tag hirebox-ai:${{ github.sha }} .
+  
 
   # Etape 4:
   # Deploie l'application sur FastAPI Cloud uniquement apres un build reussi
@@ -87,8 +73,7 @@ jobs:
     needs:
       - lint
       - type-check
-      - build-image
-
+     
     env:
       FASTAPI_CLOUD_TOKEN: ${{ secrets.FASTAPI_CLOUD_TOKEN }}
       FASTAPI_CLOUD_APP_ID: ${{ secrets.FASTAPI_CLOUD_APP_ID }}
