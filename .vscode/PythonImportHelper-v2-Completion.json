@@ -110,6 +110,23 @@
         "documentation": {}
     },
     {
+        "label": "asyncio",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "asyncio",
+        "description": "asyncio",
+        "detail": "asyncio",
+        "documentation": {}
+    },
+    {
+        "label": "ThreadPoolExecutor",
+        "importPath": "concurrent.futures",
+        "description": "concurrent.futures",
+        "isExtraImport": true,
+        "detail": "concurrent.futures",
+        "documentation": {}
+    },
+    {
         "label": "torch",
         "kind": 6,
         "isExtraImport": true,
@@ -128,6 +145,22 @@
     },
     {
         "label": "Gemma4ForConditionalGeneration",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "BitsAndBytesConfig",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "pipeline",
         "importPath": "transformers",
         "description": "transformers",
         "isExtraImport": true,
@@ -207,6 +240,14 @@
         "documentation": {}
     },
     {
+        "label": "dataclass",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
         "label": "OpenAI",
         "importPath": "openai",
         "description": "openai",
@@ -215,19 +256,35 @@
         "documentation": {}
     },
     {
-        "label": "Protocol",
-        "importPath": "typing",
-        "description": "typing",
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
         "isExtraImport": true,
-        "detail": "typing",
+        "detail": "fastapi",
         "documentation": {}
     },
     {
-        "label": "asynccontextmanager",
-        "importPath": "contextlib",
-        "description": "contextlib",
+        "label": "Request",
+        "importPath": "fastapi",
+        "description": "fastapi",
         "isExtraImport": true,
-        "detail": "contextlib",
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
         "documentation": {}
     },
     {
@@ -239,6 +296,39 @@
         "documentation": {}
     },
     {
+        "label": "Protocol",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Literal",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "secrets",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "secrets",
+        "description": "secrets",
+        "detail": "secrets",
+        "documentation": {}
+    },
+    {
+        "label": "asynccontextmanager",
+        "importPath": "contextlib",
+        "description": "contextlib",
+        "isExtraImport": true,
+        "detail": "contextlib",
+        "documentation": {}
+    },
+    {
         "label": "HTTPException",
         "importPath": "fastapi.exceptions",
         "description": "fastapi.exceptions",
@@ -247,31 +337,15 @@
         "documentation": {}
     },
     {
-        "label": "Z_AI_Question_Generator",
-        "importPath": "src.glm_ai",
-        "description": "src.glm_ai",
+        "label": "get_scalar_api_reference",
+        "importPath": "scalar_fastapi",
+        "description": "scalar_fastapi",
         "isExtraImport": true,
-        "detail": "src.glm_ai",
+        "detail": "scalar_fastapi",
         "documentation": {}
     },
     {
-        "label": "Gemma_Question_Generator",
-        "importPath": "src.gemma_ai",
-        "description": "src.gemma_ai",
-        "isExtraImport": true,
-        "detail": "src.gemma_ai",
-        "documentation": {}
-    },
-    {
-        "label": "Gemma_Question_Generator",
-        "importPath": "src.gemma_ai",
-        "description": "src.gemma_ai",
-        "isExtraImport": true,
-        "detail": "src.gemma_ai",
-        "documentation": {}
-    },
-    {
-        "label": "GenerateQuestionFromCVCommandHandler",
+        "label": "GenerateQuestionFromCVCommand",
         "importPath": "src.generate_question_handler",
         "description": "src.generate_question_handler",
         "isExtraImport": true,
@@ -287,6 +361,15 @@
         "documentation": {}
     },
     {
+        "label": "src.api",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "src.api",
+        "description": "src.api",
+        "detail": "src.api",
+        "documentation": {}
+    },
+    {
         "label": "GenerateQuestionsFromCVDto",
         "importPath": "src.api",
         "description": "src.api",
@@ -295,20 +378,59 @@
         "documentation": {}
     },
     {
-        "label": "GenerateQuestionsFromCVSchema",
-        "importPath": "src.api",
-        "description": "src.api",
+        "label": "verify_backend_request",
+        "importPath": "src.security",
+        "description": "src.security",
         "isExtraImport": true,
-        "detail": "src.api",
+        "detail": "src.security",
         "documentation": {}
     },
     {
-        "label": "asyncio",
-        "kind": 6,
+        "label": "Z_AI_Question_Generator",
+        "importPath": "src.hf_glm_ai",
+        "description": "src.hf_glm_ai",
         "isExtraImport": true,
-        "importPath": "asyncio",
-        "description": "asyncio",
-        "detail": "asyncio",
+        "detail": "src.hf_glm_ai",
+        "documentation": {}
+    },
+    {
+        "label": "Gemma_Question_Generator",
+        "importPath": "src.gemma_ai",
+        "description": "src.gemma_ai",
+        "isExtraImport": true,
+        "detail": "src.gemma_ai",
+        "documentation": {}
+    },
+    {
+        "label": "Gemma_Question_Generator",
+        "importPath": "src.gemma_ai",
+        "description": "src.gemma_ai",
+        "isExtraImport": true,
+        "detail": "src.gemma_ai",
+        "documentation": {}
+    },
+    {
+        "label": "build_messages",
+        "importPath": "prompt_file",
+        "description": "prompt_file",
+        "isExtraImport": true,
+        "detail": "prompt_file",
+        "documentation": {}
+    },
+    {
+        "label": "GENERATION_CONFIG",
+        "importPath": "prompt_file",
+        "description": "prompt_file",
+        "isExtraImport": true,
+        "detail": "prompt_file",
+        "documentation": {}
+    },
+    {
+        "label": "MODEL_ID",
+        "importPath": "prompt_file",
+        "description": "prompt_file",
+        "isExtraImport": true,
+        "detail": "prompt_file",
         "documentation": {}
     },
     {
@@ -393,15 +515,6 @@
         "documentation": {}
     },
     {
-        "label": "GenerateQuestionsFromCVSchema",
-        "kind": 6,
-        "importPath": "src.api",
-        "description": "src.api",
-        "peekOfCode": "class GenerateQuestionsFromCVSchema(BaseModel):\n    cv_content: str=\"Contenu texte du CV.\"\nclass GenerateQuestionsFromCVDto(BaseModel):\n    question: Question",
-        "detail": "src.api",
-        "documentation": {}
-    },
-    {
         "label": "GenerateQuestionsFromCVDto",
         "kind": 6,
         "importPath": "src.api",
@@ -415,7 +528,7 @@
         "kind": 6,
         "importPath": "src.gemma_ai",
         "description": "src.gemma_ai",
-        "peekOfCode": "class Gemma_Question_Generator(QuestionGenerator):\n    def __init__(self, prompt: str) -> None:\n        self.__prompt = prompt\n        self.__tokenizer = AutoTokenizer.from_pretrained(MODEL_PATH)\n        self.__model = Gemma4ForConditionalGeneration.from_pretrained(\n            MODEL_PATH,\n            torch_dtype=torch.bfloat16,\n        )\n    async def generate_question(self, cv_content: str) -> Question:\n        system_prompt = (",
+        "peekOfCode": "class Gemma_Question_Generator(QuestionGenerator):\n    _executor: ThreadPoolExecutor = ThreadPoolExecutor(max_workers=1)\n    def __init__(self, prompt: str) -> None:\n        self.__prompt = prompt\n        self.__tokenizer = AutoTokenizer.from_pretrained(MODEL_PATH)\n        self.__model = _build_model()\n        self._warmup()\n    def _truncate_cv(self, cv_content: str) -> str:\n        tokens = self.__tokenizer.encode(cv_content, add_special_tokens=False)\n        if len(tokens) <= CV_MAX_TOKENS:",
         "detail": "src.gemma_ai",
         "documentation": {}
     },
@@ -424,16 +537,52 @@
         "kind": 5,
         "importPath": "src.gemma_ai",
         "description": "src.gemma_ai",
-        "peekOfCode": "MODEL_PATH = os.getenv(\"GEMMA_MODEL_PATH\", \"models/google/gemma-4-E2B-it\")\nclass Gemma_Question_Generator(QuestionGenerator):\n    def __init__(self, prompt: str) -> None:\n        self.__prompt = prompt\n        self.__tokenizer = AutoTokenizer.from_pretrained(MODEL_PATH)\n        self.__model = Gemma4ForConditionalGeneration.from_pretrained(\n            MODEL_PATH,\n            torch_dtype=torch.bfloat16,\n        )\n    async def generate_question(self, cv_content: str) -> Question:",
+        "peekOfCode": "MODEL_PATH = os.getenv(\"GEMMA_MODEL_PATH\", \"models/google/gemma-4-E2B-it\")\nMAX_NEW_TOKENS = int(os.getenv(\"MAX_NEW_TOKENS\", \"150\"))\nCV_MAX_TOKENS = int(os.getenv(\"CV_MAX_TOKENS\", \"600\"))\nSYSTEM_PROMPT = (\n    \"Tu es un recruteur expert. \"\n    \"À partir du CV fourni, génère UNE seule question d'entretien pertinente. \"\n    'Réponds UNIQUEMENT en JSON valide : {\"title\": \"...\", \"question\": \"...\"}. '\n    \"Texte brut uniquement. Pas de HTML. Pas de markdown. Rien d'autre que le JSON.\"\n)\n_WARMUP_CV = \"Développeur Python, 3 ans d'expérience, Django, FastAPI.\"",
         "detail": "src.gemma_ai",
         "documentation": {}
     },
     {
-        "label": "GenerateQuestionFromCVCommandHandler",
+        "label": "MAX_NEW_TOKENS",
+        "kind": 5,
+        "importPath": "src.gemma_ai",
+        "description": "src.gemma_ai",
+        "peekOfCode": "MAX_NEW_TOKENS = int(os.getenv(\"MAX_NEW_TOKENS\", \"150\"))\nCV_MAX_TOKENS = int(os.getenv(\"CV_MAX_TOKENS\", \"600\"))\nSYSTEM_PROMPT = (\n    \"Tu es un recruteur expert. \"\n    \"À partir du CV fourni, génère UNE seule question d'entretien pertinente. \"\n    'Réponds UNIQUEMENT en JSON valide : {\"title\": \"...\", \"question\": \"...\"}. '\n    \"Texte brut uniquement. Pas de HTML. Pas de markdown. Rien d'autre que le JSON.\"\n)\n_WARMUP_CV = \"Développeur Python, 3 ans d'expérience, Django, FastAPI.\"\ndef _build_model() -> Gemma4ForConditionalGeneration:",
+        "detail": "src.gemma_ai",
+        "documentation": {}
+    },
+    {
+        "label": "CV_MAX_TOKENS",
+        "kind": 5,
+        "importPath": "src.gemma_ai",
+        "description": "src.gemma_ai",
+        "peekOfCode": "CV_MAX_TOKENS = int(os.getenv(\"CV_MAX_TOKENS\", \"600\"))\nSYSTEM_PROMPT = (\n    \"Tu es un recruteur expert. \"\n    \"À partir du CV fourni, génère UNE seule question d'entretien pertinente. \"\n    'Réponds UNIQUEMENT en JSON valide : {\"title\": \"...\", \"question\": \"...\"}. '\n    \"Texte brut uniquement. Pas de HTML. Pas de markdown. Rien d'autre que le JSON.\"\n)\n_WARMUP_CV = \"Développeur Python, 3 ans d'expérience, Django, FastAPI.\"\ndef _build_model() -> Gemma4ForConditionalGeneration:\n    try:",
+        "detail": "src.gemma_ai",
+        "documentation": {}
+    },
+    {
+        "label": "SYSTEM_PROMPT",
+        "kind": 5,
+        "importPath": "src.gemma_ai",
+        "description": "src.gemma_ai",
+        "peekOfCode": "SYSTEM_PROMPT = (\n    \"Tu es un recruteur expert. \"\n    \"À partir du CV fourni, génère UNE seule question d'entretien pertinente. \"\n    'Réponds UNIQUEMENT en JSON valide : {\"title\": \"...\", \"question\": \"...\"}. '\n    \"Texte brut uniquement. Pas de HTML. Pas de markdown. Rien d'autre que le JSON.\"\n)\n_WARMUP_CV = \"Développeur Python, 3 ans d'expérience, Django, FastAPI.\"\ndef _build_model() -> Gemma4ForConditionalGeneration:\n    try:\n        import flash_attn  # noqa: F401",
+        "detail": "src.gemma_ai",
+        "documentation": {}
+    },
+    {
+        "label": "_WARMUP_CV",
+        "kind": 5,
+        "importPath": "src.gemma_ai",
+        "description": "src.gemma_ai",
+        "peekOfCode": "_WARMUP_CV = \"Développeur Python, 3 ans d'expérience, Django, FastAPI.\"\ndef _build_model() -> Gemma4ForConditionalGeneration:\n    try:\n        import flash_attn  # noqa: F401\n        attn_impl = \"flash_attention_2\"\n    except ImportError:\n        attn_impl = \"sdpa\"\n    if torch.cuda.is_available():\n        quantization_config = BitsAndBytesConfig(\n            load_in_4bit=True,",
+        "detail": "src.gemma_ai",
+        "documentation": {}
+    },
+    {
+        "label": "GenerateQuestionFromCVCommand",
         "kind": 6,
         "importPath": "src.generate_question_handler",
         "description": "src.generate_question_handler",
-        "peekOfCode": "class GenerateQuestionFromCVCommandHandler:\n    cv_content: str\nclass GenerateQuestionFromCVHandler():\n    def __init__(self, question_generator: QuestionGenerator) -> None:\n        self.question_generator =question_generator\n    async def execute(self, command: GenerateQuestionFromCVCommandHandler)-> Question:\n        question = await self.question_generator.generate_question(cv_content=command.cv_content,)\n        return question",
+        "peekOfCode": "class GenerateQuestionFromCVCommand:\n    cv_content: str\nclass GenerateQuestionFromCVHandler:\n    def __init__(self, question_generator: QuestionGenerator) -> None:\n        self.question_generator = question_generator\n    async def execute(self, command: GenerateQuestionFromCVCommand) -> Question:\n        question = await self.question_generator.generate_question(cv_content=command.cv_content,)\n        return question",
         "detail": "src.generate_question_handler",
         "documentation": {}
     },
@@ -442,44 +591,44 @@
         "kind": 6,
         "importPath": "src.generate_question_handler",
         "description": "src.generate_question_handler",
-        "peekOfCode": "class GenerateQuestionFromCVHandler():\n    def __init__(self, question_generator: QuestionGenerator) -> None:\n        self.question_generator =question_generator\n    async def execute(self, command: GenerateQuestionFromCVCommandHandler)-> Question:\n        question = await self.question_generator.generate_question(cv_content=command.cv_content,)\n        return question",
+        "peekOfCode": "class GenerateQuestionFromCVHandler:\n    def __init__(self, question_generator: QuestionGenerator) -> None:\n        self.question_generator = question_generator\n    async def execute(self, command: GenerateQuestionFromCVCommand) -> Question:\n        question = await self.question_generator.generate_question(cv_content=command.cv_content,)\n        return question",
         "detail": "src.generate_question_handler",
         "documentation": {}
     },
     {
         "label": "QuestionModel",
         "kind": 6,
-        "importPath": "src.glm_ai",
-        "description": "src.glm_ai",
-        "peekOfCode": "class QuestionModel(BaseModel):\n    title: str\n    question_body: str\n    applicant_name: str\ndef load_cv_content(cv_file_name: str) -> str:\n    with open(cv_file_name, \"r\", encoding=\"utf-8\") as cv_file:\n        return cv_file.read()\nclass Z_AI_Question_Generator(QuestionGenerator):\n    def __init__(self, prompt: str) -> None:\n        self.__prompt = prompt",
-        "detail": "src.glm_ai",
+        "importPath": "src.hf_glm_ai",
+        "description": "src.hf_glm_ai",
+        "peekOfCode": "class QuestionModel(BaseModel):\n    title: str\n    question_body: str\n    applicant_name: str\ndef load_cv_content(cv_file_name: str) -> str:\n    with open(cv_file_name, \"r\", encoding=\"utf-8\") as cv_file:\n        return cv_file.read()\nclass Z_AI_Question_Generator(QuestionGenerator):\n    \"\"\"Implémentation de QuestionGenerator utilisant le modèle GLM-5.1 de Hugging Face.\"\"\"\n    def __init__(self, prompt: str) -> None:",
+        "detail": "src.hf_glm_ai",
         "documentation": {}
     },
     {
         "label": "Z_AI_Question_Generator",
         "kind": 6,
-        "importPath": "src.glm_ai",
-        "description": "src.glm_ai",
-        "peekOfCode": "class Z_AI_Question_Generator(QuestionGenerator):\n    def __init__(self, prompt: str) -> None:\n        self.__prompt = prompt\n        self.__model = \"zai-org/GLM-5.1:together\"\n    async def generate_question(self, cv_content: str) -> Question:\n        \"\"\"\n        Génère une seule question à partir du CV fourni.\n        \"\"\"\n        system_prompt = (\n            \"Tu es un recruteur expert. \"",
-        "detail": "src.glm_ai",
+        "importPath": "src.hf_glm_ai",
+        "description": "src.hf_glm_ai",
+        "peekOfCode": "class Z_AI_Question_Generator(QuestionGenerator):\n    \"\"\"Implémentation de QuestionGenerator utilisant le modèle GLM-5.1 de Hugging Face.\"\"\"\n    def __init__(self, prompt: str) -> None:\n        self.__prompt = prompt\n        self.__model = \"zai-org/GLM-5.1:together\"\n    async def generate_question(self, cv_content: str) -> Question:\n        \"\"\"\n        Génère une seule question à partir du CV fourni.\n        \"\"\"\n        system_prompt = (",
+        "detail": "src.hf_glm_ai",
         "documentation": {}
     },
     {
         "label": "load_cv_content",
         "kind": 2,
-        "importPath": "src.glm_ai",
-        "description": "src.glm_ai",
-        "peekOfCode": "def load_cv_content(cv_file_name: str) -> str:\n    with open(cv_file_name, \"r\", encoding=\"utf-8\") as cv_file:\n        return cv_file.read()\nclass Z_AI_Question_Generator(QuestionGenerator):\n    def __init__(self, prompt: str) -> None:\n        self.__prompt = prompt\n        self.__model = \"zai-org/GLM-5.1:together\"\n    async def generate_question(self, cv_content: str) -> Question:\n        \"\"\"\n        Génère une seule question à partir du CV fourni.",
-        "detail": "src.glm_ai",
+        "importPath": "src.hf_glm_ai",
+        "description": "src.hf_glm_ai",
+        "peekOfCode": "def load_cv_content(cv_file_name: str) -> str:\n    with open(cv_file_name, \"r\", encoding=\"utf-8\") as cv_file:\n        return cv_file.read()\nclass Z_AI_Question_Generator(QuestionGenerator):\n    \"\"\"Implémentation de QuestionGenerator utilisant le modèle GLM-5.1 de Hugging Face.\"\"\"\n    def __init__(self, prompt: str) -> None:\n        self.__prompt = prompt\n        self.__model = \"zai-org/GLM-5.1:together\"\n    async def generate_question(self, cv_content: str) -> Question:\n        \"\"\"",
+        "detail": "src.hf_glm_ai",
         "documentation": {}
     },
     {
         "label": "client",
         "kind": 5,
-        "importPath": "src.glm_ai",
-        "description": "src.glm_ai",
+        "importPath": "src.hf_glm_ai",
+        "description": "src.hf_glm_ai",
         "peekOfCode": "client = OpenAI(\n    base_url=\"https://router.huggingface.co/v1\",\n    api_key=os.getenv(\"HF_TOKEN\"),\n)\nclass QuestionModel(BaseModel):\n    title: str\n    question_body: str\n    applicant_name: str\ndef load_cv_content(cv_file_name: str) -> str:\n    with open(cv_file_name, \"r\", encoding=\"utf-8\") as cv_file:",
-        "detail": "src.glm_ai",
+        "detail": "src.hf_glm_ai",
         "documentation": {}
     },
     {
@@ -489,6 +638,33 @@
         "description": "src.question",
         "peekOfCode": "class Question:\n    title: str\n    applicant_full_name: str\n    number: int\n    body: str",
         "detail": "src.question",
+        "documentation": {}
+    },
+    {
+        "label": "ApiSecuritySettings",
+        "kind": 6,
+        "importPath": "src.security",
+        "description": "src.security",
+        "peekOfCode": "class ApiSecuritySettings:\n    enabled: bool\n    api_key_prefix: str\n    allowed_api_keys: frozenset[str]\n    allowed_origins: frozenset[str]\n    @classmethod\n    def from_env(cls) -> \"ApiSecuritySettings\":\n        return cls(\n            enabled=_env_flag(\"HIREBOX_ENABLE_API_SECURITY\", \"true\"),\n            api_key_prefix=os.getenv(\"HIREBOX_API_KEY_PREFIX\", \"\").strip(),",
+        "detail": "src.security",
+        "documentation": {}
+    },
+    {
+        "label": "API_KEY_HEADER_NAME",
+        "kind": 5,
+        "importPath": "src.security",
+        "description": "src.security",
+        "peekOfCode": "API_KEY_HEADER_NAME = \"API_KEY\"\nFORWARDED_FOR_HEADER = \"X-Forwarded-For\"\ndef _parse_csv_env(var_name: str) -> frozenset[str]:\n    raw_value = os.getenv(var_name, \"\")\n    return frozenset(item.strip() for item in raw_value.split(\",\") if item.strip())\ndef _env_flag(var_name: str, default: str = \"true\") -> bool:\n    value = os.getenv(var_name, default).strip().lower()\n    return value in {\"1\", \"true\", \"yes\", \"on\"}\n@dataclass(frozen=True)\nclass ApiSecuritySettings:",
+        "detail": "src.security",
+        "documentation": {}
+    },
+    {
+        "label": "FORWARDED_FOR_HEADER",
+        "kind": 5,
+        "importPath": "src.security",
+        "description": "src.security",
+        "peekOfCode": "FORWARDED_FOR_HEADER = \"X-Forwarded-For\"\ndef _parse_csv_env(var_name: str) -> frozenset[str]:\n    raw_value = os.getenv(var_name, \"\")\n    return frozenset(item.strip() for item in raw_value.split(\",\") if item.strip())\ndef _env_flag(var_name: str, default: str = \"true\") -> bool:\n    value = os.getenv(var_name, default).strip().lower()\n    return value in {\"1\", \"true\", \"yes\", \"on\"}\n@dataclass(frozen=True)\nclass ApiSecuritySettings:\n    enabled: bool",
+        "detail": "src.security",
         "documentation": {}
     },
     {
@@ -505,7 +681,16 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "GENERATE_CV_QUESTION_PROMPT_FILE = os.getenv(\n    \"GENERATE_CV_QUESTION_PROMPT_FILE\", \"\")\nwith open(GENERATE_CV_QUESTION_PROMPT_FILE, \"r\") as prompt_file:\n    GENERATE_CV_PROMPT = prompt_file.read()\ngemma_question_generator: Gemma_Question_Generator | None = None\n@asynccontextmanager\nasync def lifespan(app: FastAPI):\n    global gemma_question_generator\n    gemma_question_generator = Gemma_Question_Generator(GENERATE_CV_PROMPT)\n    yield",
+        "peekOfCode": "GENERATE_CV_QUESTION_PROMPT_FILE = os.getenv(\n    \"GENERATE_CV_QUESTION_PROMPT_FILE\", \"\")\nINFRASTRUCTURE: Literal[\"local\", \"gpuserver\",\n                        \"fastapicloud\"] = os.getenv(\"INFRASTRUCTURE\", \"local\")\nGENERATE_CV_QUESTION_PROMPT_FILE = os.getenv(\n    \"GENERATE_CV_QUESTION_PROMPT_FILE\", \"\")\nwith open(GENERATE_CV_QUESTION_PROMPT_FILE, \"r\") as prompt_file:\n    GENERATE_CV_PROMPT = prompt_file.read()\n# gemma_question_generator: Gemma_Question_Generator | None = None\n@asynccontextmanager",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "GENERATE_CV_QUESTION_PROMPT_FILE",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "GENERATE_CV_QUESTION_PROMPT_FILE = os.getenv(\n    \"GENERATE_CV_QUESTION_PROMPT_FILE\", \"\")\nwith open(GENERATE_CV_QUESTION_PROMPT_FILE, \"r\") as prompt_file:\n    GENERATE_CV_PROMPT = prompt_file.read()\n# gemma_question_generator: Gemma_Question_Generator | None = None\n@asynccontextmanager\nasync def lifespan(app: FastAPI):\n    global gemma_question_generator\n    try:\n        gemma_question_generator = Gemma_Question_Generator(GENERATE_CV_PROMPT)",
         "detail": "main",
         "documentation": {}
     },
@@ -514,8 +699,170 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "app = FastAPI(lifespan=lifespan)\n@app.get(\"/\")\nasync def root():\n    return {\"message\": \"Hello Hirebox\"}\n@app.get(\"/ping\")\nasync def ping_pong():\n    return {\"message\": \"pong\", \"status\": \"OK\"}\n@app.post(\"/generate-question-from-cv\", response_model=GenerateQuestionsFromCVDto)\nasync def generate_questions_from_cv(data: GenerateQuestionsFromCVSchema):\n    question_generator = Z_AI_Question_Generator(GENERATE_CV_PROMPT)",
+        "peekOfCode": "app = FastAPI(\n    lifespan=lifespan,\n    title=\"Hirebox API\",\n    version=\"1.0.0\",\n    docs_url=None,      # Désactive Swagger UI\n    redoc_url=None,     # Désactive ReDoc\n)\n# ─── Scalar UI ────────────────────────────────────────────────────────────────\n@app.get(\"/docs\", include_in_schema=False)\nasync def scalar_html():",
         "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "build_messages",
+        "kind": 2,
+        "importPath": "prompt_file",
+        "description": "prompt_file",
+        "peekOfCode": "def build_messages(\n    cv_text: str,\n    language: str = \"fr\",\n    level: str = \"standard\"\n) -> list[dict]:\n    \"\"\"\n    Construit la liste de messages (format chat) à envoyer à GLM-5.1.\n    Args:\n        cv_text  : Texte brut extrait du CV du candidat.\n        language : Langue de la question générée. \"fr\" (défaut) ou \"en\".",
+        "detail": "prompt_file",
+        "documentation": {}
+    },
+    {
+        "label": "build_messages_raw",
+        "kind": 2,
+        "importPath": "prompt_file",
+        "description": "prompt_file",
+        "peekOfCode": "def build_messages_raw(cv_text: str) -> list[dict]:\n    \"\"\"\n    Version simplifiée : construit les messages avec les paramètres par défaut.\n    Équivalent à build_messages(cv_text, language=\"fr\", level=\"standard\").\n    Args:\n        cv_text : Texte brut du CV.\n    Returns:\n        Liste de messages prêts à être soumis au modèle.\n    \"\"\"\n    return build_messages(cv_text=cv_text)",
+        "detail": "prompt_file",
+        "documentation": {}
+    },
+    {
+        "label": "SYSTEM_PROMPT",
+        "kind": 5,
+        "importPath": "prompt_file",
+        "description": "prompt_file",
+        "peekOfCode": "SYSTEM_PROMPT = \"\"\"Tu es un expert en recrutement et en entretiens professionnels.\nTu as pour mission d'analyser le contenu d'un CV de candidat et de formuler \\\nune question d'entretien pertinente, ciblée et ouverte, basée sur un élément \\\nspécifique du parcours du candidat.\nRègles impératives :\n- Lis attentivement l'intégralité du CV fourni.\n- Sélectionne UN SEUL élément saillant parmi : une expérience professionnelle, \\\nun projet, une compétence technique, une formation ou une réalisation notable.\n- Formule UNE SEULE question, ouverte et précise, qui invite le candidat à \\\napprofondir cet élément.",
+        "detail": "prompt_file",
+        "documentation": {}
+    },
+    {
+        "label": "USER_PROMPT_TEMPLATE",
+        "kind": 5,
+        "importPath": "prompt_file",
+        "description": "prompt_file",
+        "peekOfCode": "USER_PROMPT_TEMPLATE = \"\"\"Voici le CV du candidat :\n---\n{cv_text}\n---\nSur la base de ce CV, génère une question d'entretien pertinente et ouverte \\\nportant sur un élément spécifique du parcours de ce candidat.\"\"\"\n# -----------------------------------------------------------------------------\n# VARIANTES DE PROMPTS\n# Permettent d'ajuster le comportement selon le contexte (langue, ton, niveau).\n# -----------------------------------------------------------------------------",
+        "detail": "prompt_file",
+        "documentation": {}
+    },
+    {
+        "label": "USER_PROMPT_TEMPLATE_EN",
+        "kind": 5,
+        "importPath": "prompt_file",
+        "description": "prompt_file",
+        "peekOfCode": "USER_PROMPT_TEMPLATE_EN = \"\"\"Here is the candidate's resume:\n---\n{cv_text}\n---\nBased on this resume, generate one relevant and open-ended interview question \\\nfocused on a specific element of this candidate's background.\"\"\"\nSYSTEM_PROMPT_EN = \"\"\"You are an expert recruiter and interview specialist.\nYour task is to read a candidate's resume and generate one targeted, open-ended \\\ninterview question based on a specific and noteworthy element of their background.\nRules:",
+        "detail": "prompt_file",
+        "documentation": {}
+    },
+    {
+        "label": "SYSTEM_PROMPT_EN",
+        "kind": 5,
+        "importPath": "prompt_file",
+        "description": "prompt_file",
+        "peekOfCode": "SYSTEM_PROMPT_EN = \"\"\"You are an expert recruiter and interview specialist.\nYour task is to read a candidate's resume and generate one targeted, open-ended \\\ninterview question based on a specific and noteworthy element of their background.\nRules:\n- Read the entire resume carefully.\n- Select ONE element: a work experience, project, technical skill, education, or achievement.\n- Generate ONE open-ended question that invites the candidate to elaborate.\n- The question must be natural, professional, and conversational.\n- Do not list multiple questions. Do not comment on the resume. Do not introduce yourself.\n- Reply with the question only, no preamble or conclusion.\"\"\"",
+        "detail": "prompt_file",
+        "documentation": {}
+    },
+    {
+        "label": "SYSTEM_PROMPT_SENIOR",
+        "kind": 5,
+        "importPath": "prompt_file",
+        "description": "prompt_file",
+        "peekOfCode": "SYSTEM_PROMPT_SENIOR = \"\"\"Tu es un directeur des ressources humaines expérimenté, \\\nspécialisé dans le recrutement de profils seniors et de cadres dirigeants.\nAnalyse le CV fourni et formule une question d'entretien approfondie, \\\nstratégique et exigeante, portant sur un aspect clé du leadership, \\\nde la vision ou des réalisations à fort impact du candidat.\nRègles :\n- Sélectionne un élément à forte valeur ajoutée (direction d'équipe, \\\ntransformation organisationnelle, résultats mesurables, prise de décision stratégique).\n- Formule UNE SEULE question, rigoureuse et ouverte, qui teste la profondeur \\\nde réflexion du candidat.",
+        "detail": "prompt_file",
+        "documentation": {}
+    },
+    {
+        "label": "SYSTEM_PROMPT_JUNIOR",
+        "kind": 5,
+        "importPath": "prompt_file",
+        "description": "prompt_file",
+        "peekOfCode": "SYSTEM_PROMPT_JUNIOR = \"\"\"Tu es un recruteur bienveillant spécialisé dans l'accueil \\\nde profils juniors, stagiaires et jeunes diplômés.\nAnalyse le CV fourni et formule une question d'entretien encourageante et accessible, \\\nqui met en valeur le potentiel, la motivation ou les premières expériences du candidat.\nRègles :\n- Sélectionne un élément positif : un projet académique, un stage, \\\nune activité extra-curriculaire, une compétence acquise ou une initiative personnelle.\n- Formule UNE SEULE question, ouverte et bienveillante, qui invite le candidat \\\nà parler de son parcours avec enthousiasme.\n- Ne fais aucun commentaire. Réponds uniquement avec la question.\"\"\"",
+        "detail": "prompt_file",
+        "documentation": {}
+    },
+    {
+        "label": "MODEL_ID",
+        "kind": 5,
+        "importPath": "prompt_file",
+        "description": "prompt_file",
+        "peekOfCode": "MODEL_ID = \"zai-org/GLM-5.1\"\n# Paramètres de génération recommandés\nGENERATION_CONFIG = {\n    \"max_new_tokens\": 150,       # Une question ne dépasse pas 150 tokens\n    \"temperature\": 0.8,          # Légère créativité pour varier les questions\n    \"top_p\": 0.92,               # Nucleus sampling équilibré\n    \"do_sample\": True,\n    \"repetition_penalty\": 1.1,   # Évite les répétitions dans la formulation\n}\n# Longueur maximale du CV en tokens (au-delà, le texte sera tronqué)",
+        "detail": "prompt_file",
+        "documentation": {}
+    },
+    {
+        "label": "GENERATION_CONFIG",
+        "kind": 5,
+        "importPath": "prompt_file",
+        "description": "prompt_file",
+        "peekOfCode": "GENERATION_CONFIG = {\n    \"max_new_tokens\": 150,       # Une question ne dépasse pas 150 tokens\n    \"temperature\": 0.8,          # Légère créativité pour varier les questions\n    \"top_p\": 0.92,               # Nucleus sampling équilibré\n    \"do_sample\": True,\n    \"repetition_penalty\": 1.1,   # Évite les répétitions dans la formulation\n}\n# Longueur maximale du CV en tokens (au-delà, le texte sera tronqué)\nMAX_CV_TOKENS = 3000\n# -----------------------------------------------------------------------------",
+        "detail": "prompt_file",
+        "documentation": {}
+    },
+    {
+        "label": "MAX_CV_TOKENS",
+        "kind": 5,
+        "importPath": "prompt_file",
+        "description": "prompt_file",
+        "peekOfCode": "MAX_CV_TOKENS = 3000\n# -----------------------------------------------------------------------------\n# FONCTIONS UTILITAIRES\n# Construisent les messages prêts à être envoyés au modèle.\n# -----------------------------------------------------------------------------\ndef build_messages(\n    cv_text: str,\n    language: str = \"fr\",\n    level: str = \"standard\"\n) -> list[dict]:",
+        "detail": "prompt_file",
+        "documentation": {}
+    },
+    {
+        "label": "USAGE_EXAMPLE",
+        "kind": 5,
+        "importPath": "prompt_file",
+        "description": "prompt_file",
+        "peekOfCode": "USAGE_EXAMPLE = '''\n# Exemple d'utilisation avec HuggingFace Transformers\nfrom transformers import pipeline\nfrom prompt_file import build_messages, GENERATION_CONFIG, MODEL_ID\n# Chargement du pipeline de génération de texte\npipe = pipeline(\n    \"text-generation\",\n    model=MODEL_ID,\n    device_map=\"auto\",\n    torch_dtype=\"auto\",",
+        "detail": "prompt_file",
+        "documentation": {}
+    },
+    {
+        "label": "pipe",
+        "kind": 5,
+        "importPath": "prompt_file",
+        "description": "prompt_file",
+        "peekOfCode": "pipe = pipeline(\n    \"text-generation\",\n    model=MODEL_ID,\n    device_map=\"auto\",\n    torch_dtype=\"auto\",\n)\n# Texte du CV (extrait)\ncv_text = \"\"\"\nAlice Martin\nIngénieure Data Science | 3 ans d\\'expérience",
+        "detail": "prompt_file",
+        "documentation": {}
+    },
+    {
+        "label": "cv_text",
+        "kind": 5,
+        "importPath": "prompt_file",
+        "description": "prompt_file",
+        "peekOfCode": "cv_text = \"\"\"\nAlice Martin\nIngénieure Data Science | 3 ans d\\'expérience\nEXPÉRIENCES\n- Data Scientist, FinTech Innov (2023-2025)\n  Développement d\\'un modèle de scoring crédit (XGBoost, AUC 0.91)\n  Réduction de 30% des faux positifs sur la détection de fraude\n- Stage Data Analyst, BankCorp (2022)\n  Analyse de données transactionnelles, dashboards Power BI\nFORMATION",
+        "detail": "prompt_file",
+        "documentation": {}
+    },
+    {
+        "label": "messages",
+        "kind": 5,
+        "importPath": "prompt_file",
+        "description": "prompt_file",
+        "peekOfCode": "messages = build_messages(cv_text=cv_text, language=\"fr\", level=\"standard\")\n# Génération de la question\noutput = pipe(messages, **GENERATION_CONFIG)\nquestion = output[0][\"generated_text\"][-1][\"content\"]\nprint(\"Question générée :\", question)\n# Exemple de sortie :\n# \"Vous avez réduit de 30% les faux positifs sur la détection de fraude chez\n#  FinTech Innov — pouvez-vous me décrire la démarche que vous avez suivie\n#  pour atteindre ce résultat ?\"\n'''",
+        "detail": "prompt_file",
+        "documentation": {}
+    },
+    {
+        "label": "output",
+        "kind": 5,
+        "importPath": "prompt_file",
+        "description": "prompt_file",
+        "peekOfCode": "output = pipe(messages, **GENERATION_CONFIG)\nquestion = output[0][\"generated_text\"][-1][\"content\"]\nprint(\"Question générée :\", question)\n# Exemple de sortie :\n# \"Vous avez réduit de 30% les faux positifs sur la détection de fraude chez\n#  FinTech Innov — pouvez-vous me décrire la démarche que vous avez suivie\n#  pour atteindre ce résultat ?\"\n'''",
+        "detail": "prompt_file",
+        "documentation": {}
+    },
+    {
+        "label": "question",
+        "kind": 5,
+        "importPath": "prompt_file",
+        "description": "prompt_file",
+        "peekOfCode": "question = output[0][\"generated_text\"][-1][\"content\"]\nprint(\"Question générée :\", question)\n# Exemple de sortie :\n# \"Vous avez réduit de 30% les faux positifs sur la détection de fraude chez\n#  FinTech Innov — pouvez-vous me décrire la démarche que vous avez suivie\n#  pour atteindre ce résultat ?\"\n'''",
+        "detail": "prompt_file",
+        "documentation": {}
+    },
+    {
+        "label": "user_age",
+        "kind": 5,
+        "importPath": "script",
+        "description": "script",
+        "peekOfCode": "user_age = 12",
+        "detail": "script",
         "documentation": {}
     }
 ]

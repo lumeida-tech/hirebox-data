@@ -17,3 +17,5 @@ fake_cv.txt
 # Modèles locaux
 models/
 !models/.gitkeep
+
+ssh_key.pem
